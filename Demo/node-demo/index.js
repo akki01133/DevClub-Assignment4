@@ -4,8 +4,8 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 function myServer (req, res) {
-    // console.log({req});
-    // console.log(req.url);
+    console.log({req});
+    console.log(req.url);
     console.log(req.url.split('q=')[1]);
     let query = req.url.split('q=')[1];
     let ans = Number(query)*Number(query);

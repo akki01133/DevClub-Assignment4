@@ -1,8 +1,7 @@
 console.log("Moodle+ successfully loaded!");
-const login_element = document.querySelector("#login"); // Fill the selector for the login element in ""
+const login_element = document.querySelector("#login"); 
 let login_text = login_element.innerText;
-
-let question = login_text.split(" "); // Use split and array operations on the login_text string to extract the question
+let question = login_text.split(" "); 
 
 var ans = "0";
 if(question[5] == "enter"){
@@ -18,7 +17,9 @@ else if(question[5] == "subtract"){
     ans = parseInt(question[6]) - parseInt(question[8]) 
 }
 
-let answer = ans; // Use if conditions to parse the question and calculate the answer. Make cases for all types of captcha asked
+let answer = ans; 
 
-const captcha_input_element = document.querySelector("#valuepkg3"); // Fill the selector for the captcha input element in ""
+const captcha_input_element = document.querySelector("#valuepkg3"); 
 captcha_input_element.value = answer;
+
+
