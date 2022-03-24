@@ -1,0 +1,390 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+body{
+    background-color: azure;
+}
+
+.home{
+    background-color:blueviolet ;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container{
+    width: 100%;
+    min-height: max-content;
+    margin:0%;
+    padding:0;
+    background-color:#e9d9d963;
+}
+
+.case-table-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 1.8rem auto 0 auto;
+    border: 2px solid red;
+    border-radius: 4px;
+    padding:2rem;
+
+    max-width: 70%;
+}
+
+.case-table{
+    margin: 0.5rem;
+}
+
+.case-table table{
+    border-collapse: collapse; 
+}
+
+.case-table tr { 
+    border: none;
+}
+
+.case-table td{ 
+    width:50%;
+    padding-left: 0.8rem;
+    padding-right: 1.5rem;
+}
+
+
+
+.case-table td:first-child {
+    width: 80px;
+    border-right: #70757a77 0.1px solid;
+}
+
+.covid-topic{
+    font-size: 1.2rem;
+}
+
+.total-value{
+    font-size:1.3rem;
+    font-weight: bold;
+}
+.today-value{
+    font-size:1.1rem;
+    color:#70757a;
+}
+
+.covid-chart{
+    max-width:75%;
+    margin: 5% auto 0rem auto;
+    padding-bottom: 5%;
+}
+
+.topnav{
+    width: 100%;
+}
+
+.topnav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 0 6rem ;
+}
+
+.topnav ul li{
+    padding:2rem 2rem;
+}
+
+.topnav ul li a{
+    text-decoration: none;
+    font-size: 1.5em;
+    display:inline-block;
+    color: #fff;
+    font-weight: 500;
+}
+
+.topnav ul li a:hover{
+    color:yellow;
+}
+
+@media (max-width: 770px){
+    .topnav ul{
+        padding:0;
+        margin:0;
+    }
+
+    .topnav ul li{
+        padding:0.5rem;
+    }
+
+    .topnav ul li a{
+        font-size:1rem;
+    }
+}
+
+.home-content-container{
+    display: flex;
+    flex:1;
+}
+
+.home-content{  
+    max-width: max-content;
+    /* margin: 4rem auto 0 auto; */
+    margin: auto;
+    align-content: center;
+}
+
+.quote1{
+    max-width: 55rem;
+}
+
+.quote1 h3{
+    font-size: 2rem;
+    font-weight: 900;
+    color:#071f70
+}
+
+
+.quote-and-image{
+    width:100%;
+    display:flex;
+    
+}
+
+.quote2{
+    max-width:40rem;
+}
+.quote2 h2{
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgb(65, 6, 33);
+}
+
+.covid-image-container{
+    box-sizing: border-box;
+}
+
+.covid-image-container img{
+    max-width:25rem;
+    max-height: 25rem;
+    padding-left:  30px;
+    padding-top: 10px;
+}
+
+@media (max-width:1250px){
+    .home-content{
+        margin: 3rem 5rem 0rem 5rem;
+    }
+    .covid-image-container{
+        width: 100%;
+    }
+    .covid-image-container img{
+        padding:0;
+        float: right;
+        margin-right: 1rem;
+    }
+    .quote-and-image{
+      flex-wrap: wrap;  
+    }
+    .topnav ul{
+        margin-left: 4.2rem;
+    }
+    .topnav ul li{
+        padding:3rem 1rem 3rem 0.8rem ;
+    }
+    .topnav ul li a{
+        font-size: 1.7rem;
+    }
+}
+
+
+
+
+.tip-container{
+    background-color: azure;
+
+}
+
+
+.tip{
+    border: 2px solid red;
+    border-radius: 4px;
+    padding-top:2rem;
+    padding-bottom:2rem;
+    max-width: 80%;
+    margin:3rem auto;
+
+}
+
+.tip-image, .tip-image2{
+    display: flex;
+}
+
+.tip-image img, .tip-image2 img{
+    height: 350px;
+    width: 350px;
+    margin: auto;
+}
+
+.tip-text, .tip-text2{
+    text-align: center;
+    flex:1;
+    font-size:1.3rem;
+}
+
+.caption{
+    margin: auto;
+}
+
+.heading{
+    text-align: center;
+    font-size:1.8rem;
+}
+
+.heading h2{
+    padding:2rem;
+}
+
+@media (min-width:900px){
+    .tip{
+        display: flex;
+        justify-content: center;
+        margin:3.5rem auto;
+    }
+
+    .tip-text, .tip-text2{
+        margin: auto;
+        flex:1;
+    }
+    .tip-image,.tip-image2{
+        flex:1;
+    }
+    .tip-text2{
+        order: 1;
+    }
+    .tip-image2{
+        order: 2;
+    }
+
+}
+
+.symptoms{
+    width: auto;
+    min-height:80vh;
+    background-color: #ff5dffc2;
+}
+
+.symptoms table{
+    border: 1px solid black;
+    min-width: 60%;
+    max-width: 80%;
+    margin : 2em auto ;
+    border-collapse: collapse;
+}
+
+.symptoms th{
+    border: 5px solid black;
+    text-align: center;
+    height:  60px;
+    font-size: 25px;
+}
+
+.symptoms td{
+    border: 5px solid black;
+    text-align: center;
+    height: 60px;
+}
+
+.faqs{
+    min-height: 100vh;
+}
+
+.faqs section{
+    max-width: 80%;
+    margin: 10px auto;
+    border: 1px solid violet;
+    border-radius: 3px;
+}
+.faqsitem{
+    width: 85%;
+    margin: 2.5rem auto;
+    border: 1px solid violet;
+    border-radius: 5px;
+}
+
+.faqsitem h3{
+    text-align: center;
+    margin-top:1rem;   
+}
+.faqsitem p{
+    padding:1.5rem;
+}
+
+.ytsec5{
+    min-height: 80vh;
+    margin-top: 3rem;
+}
+
+.iframe-container{
+    position: relative;
+    max-width:65%;
+    margin: 3rem auto;
+    padding-bottom: 40.25%; /*16:9 ratio*/
+    height:0;
+    /* margin: 2.5rem auto 5rem auto; */
+}
+
+.iframe-container iframe{
+     position:absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+}
+
+.footer{
+    min-height: max-content;
+    background-color: #172c74;
+}
+
+.social-media-links{
+    width: 100%;
+}
+
+.social-media-links ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.social-media-links ul li{
+    margin: 1.5rem;
+}
+
+.build-info{
+    margin: 1.1rem auto 0rem auto;
+    padding-bottom: 1.5rem;
+}
+
+.build-info ul{
+    display: flex;
+    justify-content: center;
+}
+.build-info ul :first-child{
+    list-style-type: none ;
+}
+
+.build-info ul li{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: aliceblue;
+}
+
+.build-info ul li a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: blueviolet;
+}
+

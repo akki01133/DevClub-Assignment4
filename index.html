@@ -1,12 +1,265 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Covid Charts</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/2019-nCoV-CDC-23312_without_background.png" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+
+	<title>
+		Covid Charts
+	</title>
 </head>
+
 <body>
+
+	<!-- home section -->
+	<div class="home" id="Home">
+		<div class="topnav">
+			<ul>
+				<li><a href="#Home">Home</a></li>
+				<li><a href="#Charts">Charts</a></li>
+				<li><a href="#Tips">Tips</a></li>
+				<li><a href="#Symptoms">Symptoms</a></li>
+				<li><a href="#FAQs">FAQs</a></li>
+				<li><a href="#YouTube">YouTube</a></li>
+			</ul>
+		</div>
+
+		<div class="home-content-container">
+			<div class="home-content">
+				<div class="quote1">
+					<h3>Confused about where to get the right information about COVID-19?</h3>
+				</div>
+
+				<div class="quote-and-image">
+					<div class="quote2">
+						<h2>Don't Worry, we Got You!</h2>
+					</div>
+
+					<div class="covid-image-container">
+						<img src="images/covid1.png" alt="covid-19 anim">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="chart-container" id="Charts">
+		<div class="heading">
+			<h2>Stats and charts</h2>
+		</div>
+
+		<div class = "case-table-container">
+			<div class="case-table">
+				<h2>Global</h2>
+			<table>
+			<tbody>
+			<tr>
+				<td>
+					<div class="covid-topic">Cases</div>
+					<div class="total-value">
+						<div id="tgc"></div>
+					</div>
+					<div class="today-value" role="text">
+						<span id="ngc"></span>
+					</div>
+				</td>
+				<td>
+					<div class="covid-topic">Deaths</div>
+					<div class="total-value" >
+						<span id="tgd"></span>
+					</div>
+					<div class="today-value" role="text">
+						<span id="ngd"></span>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+
+			<div class="case-table">
+				<h2>India</h2>
+				<table>
+				<tbody>
+				<tr>
+					<td>
+						<div class="covid-topic">Cases</div>
+						<div class="total-value" role="text">
+							<span id="tic">4.3Cr</span>
+						</div>
+						<div class="today-value" role="text">
+							<span id="nic">+1,938</span>
+						</div>
+					</td>
+					<td>
+						<div class="covid-topic">Deaths</div>
+						<div class="total-value" role="text">
+								<span id="tid">5.17L</span>
+						</div>
+						<div class="today-value" role="text">
+								<span id="nid">+67</span>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+		</div>
+
+		<div class="covid-chart">
+			<canvas id="covid-linechart"></canvas>
+		</div>
+	</div>
+
+	<div class="tip-container" id="Tips">
+		<div class="heading">
+			<h2>Tips</h2>
+		</div>
+
+		<div class="tip">
+			<div class="tip-image">
+				<img src="images/wash_hands.png" alt="wash_hands anim">
+			</div>
+
+			<div class="tip-text">
+				<h3>Wash Hands Regularly</h3>
+			</div>
+		</div>
+
+		<div class="tip">
+			<div class="tip-image2">
+				<img src="images/wear_mask.png" alt="wear mask anim">
+			</div>
+
+			<div class="tip-text2">
+				<h3 class="caption">Wear Mask</h3>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<div class="symptoms" id="Symptoms">
+		<div class="heading">
+			<h2>Symptoms</h2>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Symptom</th>
+					<th>Severity</th>
+					<th>Advice</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>Tiredness</td>
+				<td>Mild</td>
+				<td>Drink plenty of fluids,<br> particularly water.</td>
+			</tr>
+			<tr>
+				<td>Cold</td>
+				<td>Mild</td>
+				<td>Drink plenty of fluids,<br> particularly water.</td>
+			</tr>
+			<tr>
+				<td>Cough</td>
+				<td>Mild</td>
+				<td>Drink plenty of fluids, <br> particularly water.</td>
+			</tr>
+			<tr>
+				<td>Tiredness</td>
+				<td>Mild</td>
+				<td>Drink plenty of fluids, <br> particularly water.</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- FAQs Section -->
+	<div class="faqs" id="FAQs">
+		<div class="heading">
+			<h2>FAQs</h2>
+		</div>
+		<section>
+			<div class="faqsitem">
+				<h3>What is COVID-19?</h3>
+				<p>
+					COVID-19 is a disease caused by a virus called SARS-CoV-2.
+					Most people with COVID-19 have mild symptoms, but some people can become severely ill.
+					Although most people with COVID-19 get better within weeks of illness, some people experience
+					post-COVID conditions.
+					Post-COVID conditions are a wide range of new, returning, or ongoing health problems people can
+					experience more than four weeks after first being infected with the virus that causes COVID-19.
+					Older people and those who have certain underlying medical conditions are more likely to get
+					severely ill from COVID-19.
+					Vaccines against COVID-19 are safe and effective.
+				</p>
+			</div>
+			<div class="faqsitem">
+				<h3>Should I use soap and water or hand sanitizer to protect myself?</h3>
+				<p>
+					Handwashing is one of the best ways to protect yourself and your family from getting sick. Wash your
+					hands often with soap and water for at least 20 seconds, especially after blowing your nose,
+					coughing, or sneezing; going to the bathroom; and before eating or preparing food. If soap and water
+					are not readily available, use an alcohol-based hand sanitizer with at least 60% alcohol.
+				</p>
+			</div>
+			<div class="faqsitem">
+				<h3>What are the symptoms and complications that COVID-19 can cause?</h3>
+				<p>
+					People with COVID-19 have reported a wide range of symptoms – from mild symptoms to severe illness.
+					Symptoms may appear 2-14 days after exposure to the virus. If you have fever, cough, or other
+					symptoms, you might have COVID-19.
+				</p>
+			</div>
+		</section>
+	</div>
+
+	<!-- youtube section -->
+	<div class="ytsec5" id="YouTube">
+		<div class="heading">
+			<h2>YouTube</h2>
+		</div>
+		<div class="iframe-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/qHksVwOrpbE" title="YouTube video"
+				frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+		</div>
+	</div>
+	</div>
+
+	<!-- footer begins here -->
+	<div class="footer">
+
+
+		<div class="social-media-links">
+			<ul>
+				<li><a href="https://www.instagram.com/ajeet_.kt/" target="_blank"><img src="images/003-instagram.png"
+							alt="insta"></a></li>
+				<li><a href="https://www.linkedin.com/in/ajeet-kumar-3150641b5/" target="_blank"><img
+							src="images/001-linkedin.png" alt="linked in"></a></li>
+				<li><a href="https://wa.me/+919712095870" target="_blank"><img src="images/002-whatsapp.png"
+							alt="whatsapp"></a></li>
+				<li><a href="https://github.com/akki01133" target="_blank"><img src="images/004-github.png"
+							alt="github"></a></li>
+			</ul>
+		</div>
+
+		<div class="build-info">
+			<ul>
+				<li>© Copyright 2022 Akki01133</li>
+				<li>Created By <a href="https://github.com/akki01133" title="Styleshout" target="_blank">Ajeet Kumar</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
 	<script src="script.js"></script>
+	
+
 </body>
+
 </html>
