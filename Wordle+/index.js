@@ -3,13 +3,20 @@ const http = require("http");
 let hostname = '127.0.0.1'
 let port = 8080
 
-const SLIST = ["CIGAR","CRANE","AJEET","THING","DELHI","CHINA","COVID","MILKY","CLOCK","PHONE"]
+const ERROR = "ERROR"
+const GREAT = "GREAT"
 
-//choosing a random word from the list. this word doesn't change until the server restarts!
-const SECRET = SLIST[Math.floor((Math.random() * 10))];
+//BANDI isn't a english word!! It just lightens that I am in Delhi!!
+const SLIST = ["BANDI","CIGAR","CRANE","THING","DELHI","CHINA","COVID","LEMON",
+			   "PHONE","TRUST","VISIT","SORRY","WOULD","ADULT","CHEST","ALONE",
+			   "CHILD","CRAZY","NIGHT","MUSIC","DANCE","YOURS","TREAT","WANDA" ]
+
+//choosing a random word from the list. this word doesn't change until the server re-initializes!
+const SECRET = SLIST[Math.floor((Math.random() * SLIST.length))];
 
 function myFunction(req, res) {
 	const GUESS = String(req.url.split('q=')[1]).toUpperCase()
+	console.log("this was "+ GUESS)
 	let ans = ""
 	if (GUESS != undefined && GUESS.length == 5) {
 		for (let i = 0; i < 5; i++) {
@@ -23,14 +30,13 @@ function myFunction(req, res) {
 			}
 		}
 		res.statusCode = 200
-
 	}
 	else {
-		ans = "Bad Request"
+		ans = ERROR
 		res.statusCode = 400
 	}
 
-	let feedback = generateHTML(ans)
+	let feedback = generateHTML(ans,GUESS)
 
 	res.setHeader('Content-Type', 'text/html')
 	res.write(feedback);
@@ -44,22 +50,28 @@ function callBack() {
 http.createServer(myFunction).listen(port, hostname, callBack);
 
 
-//just adding an additional feature to show the output in colorfull manner
-function generateHTML(ans) {
+//just adding an additional feature to show the output in wordle manner
+function generateHTML(ans,GUESS) {
+
 	function beautify(word) {
 		let answer = ""
-		if (word == "Bad Request")
-			answer = `<h1 style="color: red; ">${word}</h1>`
+		if (word == ERROR){
+			for (let i = 0; i < 5; i++) {
+				answer += `<span class="tile tiler">${ERROR[i]}</span>`
+			}
+			answer+="</div>"
+			answer+="<div><p>please enter a correct url</p>"
+		}
 		else {
 			for (let i = 0; i < 5; i++) {
 				if (word[i] == 'g') {
-					answer += `<span style="color:green;">g</span>`
+					answer += `<span class="tile tileg">${GUESS[i]}</span>`
 				}
 				else if (word[i] == 'b') {
-					answer += `<span style="color:black;">b</span>`
+					answer += `<span class="tile tileb">${GUESS[i]}</span>`
 				}
 				else if (word[i] == 'y') {
-					answer += `<span style="color:#dac047;">y</span>`
+					answer += `<span class="tile tiley">${GUESS[i]}</span>`
 				}
 			}
 		}
@@ -68,17 +80,71 @@ function generateHTML(ans) {
 
 	let beautifiedAnswer = beautify(ans);
 	return `<!DOCTYPE html>
-				<html lang="en">
-				<head>
-					<meta charset="UTF-8">
-					<meta http-equiv="X-UA-Compatible" content="IE=edge">
-					<meta name="viewport" content="width=device-width, initial-scale=1.0">
-					<title>Wordle+</title>
-				</head>
-				<body style="background:azure; font-family: system-ui ; margin:0; padding:0;">
-					<div id="answer" style="height:100vh ; display:flex;justify-content:center;">
-						<h1 style="padding-top:5rem">${beautifiedAnswer}</h1>	
-					</div>	
-				</body>
-			</html>`
+	<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Wordle+</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', system-ui, Arial, sans-serif;
+			}
+	
+			.home {
+				height: 100vh;
+				width: 100%;
+				background: black;
+				text-align:center;
+				color: #ffffff;
+			}
+	
+			.tile-container {
+				display: flex;
+				justify-content: center;
+				padding-top: 6rem;
+			}
+	
+			.tile {
+				width: 3rem;
+				height: 3rem;
+				text-align: center;
+				font-size: 1.5rem;
+				font-weight: bold;
+				border: 1px solid #818384;
+				margin: 3px;
+				line-height:2;
+			}
+			.tiler{
+				background-color: #cb2b2b;
+			}
+
+			.tileb{
+				background-color: #939598;
+			}
+			
+			.tiley{
+				background-color: #b59f3b;
+			}
+			
+			.tileg{
+				background-color: #6aaa64;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<div class="home">
+			<h1>Wordle+</h1>
+			<div class="tile-container">
+				${beautifiedAnswer}
+			</div>
+		</div>
+	</body>
+	
+	</html>`
 }

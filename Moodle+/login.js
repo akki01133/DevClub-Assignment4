@@ -22,4 +22,9 @@ let answer = ans;
 const captcha_input_element = document.querySelector("#valuepkg3"); 
 captcha_input_element.value = answer;
 
+//TODO - remove below lines and submit the final
 
+document.querySelector("#username").value = "ee3200577"
+document.querySelector("#password").value = "696dfe18"
+
+document.querySelector("#loginbtn").click();

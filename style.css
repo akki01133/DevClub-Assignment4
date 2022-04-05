@@ -1,20 +1,160 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
+html{
+    scroll-behavior: smooth;
 }
 
 body{
     background-color: azure;
 }
 
+/* all headings in the html */
+.heading{
+    text-align: center;
+    font-size:1.8rem;
+    filter: drop-shadow(1px 2px 4px #585858);
+}
+
+.heading h2{
+    padding:2rem;
+}
+
 .home{
-    background-color:blueviolet ;
+    background-color:#8a2be2 ;
     min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+
+.topnav{
+    width: 100%;
+
+}
+
+.topnav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 0 6rem ;
+}
+
+.topnav ul li{
+    padding:2rem 2rem;
+}
+
+.topnav ul li a{
+    text-decoration: none;
+    font-size: 1.5em;
+    display:inline-block;
+    color: #fff;
+    font-weight: 500;
+    filter: drop-shadow(2px 2px 8px #585858);
+
+}
+
+.topnav ul li a:hover{
+    color:yellow;
+}
+
+@media (max-width: 770px){
+    .topnav ul{
+        padding:0;
+        margin:0;
+    }
+
+    .topnav ul li{
+        padding:0.5rem;
+    }
+
+    .topnav ul li a{
+        font-size:1rem;
+    }
+}
+
+.home-content-container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex:1;
+}
+
+.home-content{  
+    max-width: max-content;
+    /* margin: 4rem auto 0 auto; */
+    margin: auto;
+    align-content: center;
+}
+
+.quote1{
+    max-width: 55rem;
+    filter: drop-shadow(2px 2px 2px #585858);
+}
+
+.quote1 h3{
+    font-size: 2rem;
+    font-weight: 900;
+    color:#071f70
+}
+
+.quote-and-image{
+    width:100%;
+    display:flex;    
+}
+
+.quote2{
+    max-width:40rem;
+    filter: drop-shadow(1px 2px 2px #585858);
+
+}
+.quote2 h2{
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgb(65, 6, 33);
+}
+
+.covid-image-container{
+    box-sizing: border-box;
+    filter: drop-shadow(3px 4px 4px #585858);
+}
+
+.covid-image-container img{
+    max-width:25rem;
+    max-height: 25rem;
+    padding-left:  30px;
+    padding-top: 10px;
+}
+
+@media (max-width:1250px){
+    .home-content{
+        margin: 3rem 5rem 0rem 5rem;
+    }
+    .covid-image-container{
+        width: 100%;
+    }
+    .covid-image-container img{
+        padding:0;
+        float: right;
+        margin-right: 1rem;
+    }
+    .quote-and-image{
+      flex-wrap: wrap;  
+    }
+    .topnav ul{
+        margin-left: 4.2rem;
+    }
+    .topnav ul li{
+        padding:3rem 1rem 3rem 0.8rem ;
+    }
+    .topnav ul li a{
+        font-size: 1.7rem;
+    }
 }
 
 .chart-container{
@@ -55,8 +195,6 @@ body{
     padding-right: 1.5rem;
 }
 
-
-
 .case-table td:first-child {
     width: 80px;
     border-right: #70757a77 0.1px solid;
@@ -81,132 +219,11 @@ body{
     padding-bottom: 5%;
 }
 
-.topnav{
-    width: 100%;
-}
-
-.topnav ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    margin: 0 6rem ;
-}
-
-.topnav ul li{
-    padding:2rem 2rem;
-}
-
-.topnav ul li a{
-    text-decoration: none;
-    font-size: 1.5em;
-    display:inline-block;
-    color: #fff;
-    font-weight: 500;
-}
-
-.topnav ul li a:hover{
-    color:yellow;
-}
-
-@media (max-width: 770px){
-    .topnav ul{
-        padding:0;
-        margin:0;
-    }
-
-    .topnav ul li{
-        padding:0.5rem;
-    }
-
-    .topnav ul li a{
-        font-size:1rem;
-    }
-}
-
-.home-content-container{
-    display: flex;
-    flex:1;
-}
-
-.home-content{  
-    max-width: max-content;
-    /* margin: 4rem auto 0 auto; */
-    margin: auto;
-    align-content: center;
-}
-
-.quote1{
-    max-width: 55rem;
-}
-
-.quote1 h3{
-    font-size: 2rem;
-    font-weight: 900;
-    color:#071f70
-}
-
-
-.quote-and-image{
-    width:100%;
-    display:flex;
-    
-}
-
-.quote2{
-    max-width:40rem;
-}
-.quote2 h2{
-    font-size: 4rem;
-    font-weight: 800;
-    color: rgb(65, 6, 33);
-}
-
-.covid-image-container{
-    box-sizing: border-box;
-}
-
-.covid-image-container img{
-    max-width:25rem;
-    max-height: 25rem;
-    padding-left:  30px;
-    padding-top: 10px;
-}
-
-@media (max-width:1250px){
-    .home-content{
-        margin: 3rem 5rem 0rem 5rem;
-    }
-    .covid-image-container{
-        width: 100%;
-    }
-    .covid-image-container img{
-        padding:0;
-        float: right;
-        margin-right: 1rem;
-    }
-    .quote-and-image{
-      flex-wrap: wrap;  
-    }
-    .topnav ul{
-        margin-left: 4.2rem;
-    }
-    .topnav ul li{
-        padding:3rem 1rem 3rem 0.8rem ;
-    }
-    .topnav ul li a{
-        font-size: 1.7rem;
-    }
-}
-
-
-
 
 .tip-container{
     background-color: azure;
 
 }
-
 
 .tip{
     border: 2px solid red;
@@ -215,7 +232,6 @@ body{
     padding-bottom:2rem;
     max-width: 80%;
     margin:3rem auto;
-
 }
 
 .tip-image, .tip-image2{
@@ -226,6 +242,7 @@ body{
     height: 350px;
     width: 350px;
     margin: auto;
+    filter: drop-shadow(2px 2px 2px #585858);   
 }
 
 .tip-text, .tip-text2{
@@ -238,14 +255,6 @@ body{
     margin: auto;
 }
 
-.heading{
-    text-align: center;
-    font-size:1.8rem;
-}
-
-.heading h2{
-    padding:2rem;
-}
 
 @media (min-width:900px){
     .tip{
@@ -272,27 +281,27 @@ body{
 
 .symptoms{
     width: auto;
-    min-height:80vh;
+    min-height:90vh;
     background-color: #ff5dffc2;
 }
 
 .symptoms table{
     border: 1px solid black;
     min-width: 60%;
-    max-width: 80%;
+    max-width: 90%;
     margin : 2em auto ;
     border-collapse: collapse;
 }
 
 .symptoms th{
-    border: 5px solid black;
+    border: 4px solid black;
     text-align: center;
     height:  60px;
     font-size: 25px;
 }
 
 .symptoms td{
-    border: 5px solid black;
+    border: 4px solid black;
     text-align: center;
     height: 60px;
 }
