@@ -1,6 +1,6 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -16,7 +16,7 @@ body{
 .heading{
     text-align: center;
     font-size:1.8rem;
-    filter: drop-shadow(1px 2px 4px #585858);
+    filter: drop-shadow(1px 1px 1px #585858);
 }
 
 .heading h2{
@@ -42,7 +42,7 @@ body{
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-    margin: 0 6rem ;
+    margin: 0 20px ;
 }
 
 .topnav ul li{
@@ -54,8 +54,7 @@ body{
     font-size: 1.5em;
     display:inline-block;
     color: #fff;
-    font-weight: 500;
-    filter: drop-shadow(2px 2px 8px #585858);
+    font-weight: 400;
 
 }
 
@@ -63,20 +62,34 @@ body{
     color:yellow;
 }
 
-@media (max-width: 770px){
+@media (max-width: 900px){
     .topnav ul{
         padding:0;
         margin:0;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-left:10px ;
     }
 
     .topnav ul li{
-        padding:0.5rem;
+        padding:15px;
     }
 
     .topnav ul li a{
-        font-size:1rem;
+        font-size:23px;
+    }   
+
+    .home-content-container{
+        padding: 0 25px;
     }
 }
+
+@media (max-width: 740px){
+    .quote-and-image{
+        flex-direction: column;
+    }
+}
+
 
 .home-content-container{
     display: flex;
@@ -94,7 +107,7 @@ body{
 
 .quote1{
     max-width: 55rem;
-    filter: drop-shadow(2px 2px 2px #585858);
+    filter: drop-shadow(1px 1px 1px #585858);
 }
 
 .quote1 h3{
@@ -110,7 +123,7 @@ body{
 
 .quote2{
     max-width:40rem;
-    filter: drop-shadow(1px 2px 2px #585858);
+    filter: drop-shadow(1px 1px 1px #585858);
 
 }
 .quote2 h2{
@@ -131,7 +144,7 @@ body{
     padding-top: 10px;
 }
 
-@media (max-width:1250px){
+@media (max-width:1250px) and (min-width:900px){
     .home-content{
         margin: 3rem 5rem 0rem 5rem;
     }
